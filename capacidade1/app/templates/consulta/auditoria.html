@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Registro de Auditoria - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>Registro de Auditoria do Sistema</h2>
+     <a href="{{ url_for('consulta.index') }}" class="btn btn-secondary">Voltar aos Relatórios</a>
+</div>
+
+<table class="data-table">
+    <thead>
+        <tr>
+             <th>Data/Hora</th>
+             <th>Tabela</th>
+             <th>Operação</th>
+             <th>Chave</th>
+             <th>Usuário</th>
+         </tr>
+    </thead>
+    <tbody>
+        {% if auditorias %}
+            {% for auditoria in auditorias %}
+            <tr>
+                <td>{{ auditoria.data_hora }}</td>
+                <td>{{ auditoria.tabela }}</td>
+                <td>{{ auditoria.operacao }}</td>
+                <td>{{ auditoria.chave_primaria }}</td>
+                <td>{{ auditoria.usuario }}</td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr><td colspan="5">Nenhum registro encontrado</td></tr>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}

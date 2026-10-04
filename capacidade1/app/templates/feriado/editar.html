@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Feriado - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>C192T: Editar Feriado do Órgão</h2>
+</div>
+
+<div class="form-container">
+    <h3>Editar Feriado</h3>
+    <form method="POST" class="form">
+        <div class="form-group">
+            <label>Data</label>
+            <input type="text" value="{{ feriado.data.strftime('%d/%m/%Y') if feriado.data else '-' }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Código Órgão</label>
+            <input type="text" value="{{ feriado.codigo_orgao }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Tipo Órgão</label>
+            <input type="text" value="{{ feriado.tipo_orgao }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label for="descricao">Descrição <span style="color:red;">*</span></label>
+            <input type="text" id="descricao" name="descricao" maxlength="40" required value="{{ feriado.descricao }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="creche">Creche</label>
+            <select id="creche" name="creche">
+                <option value="">Selecione</option>
+                <option value="S" {% if feriado.creche == 'S' %}selected{% endif %}>Sim</option>
+                <option value="N" {% if feriado.creche == 'N' %}selected{% endif %}>Não</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="recesso_literal">Tipo de Recesso</label>
+            <select id="recesso_literal" name="recesso_literal">
+                <option value="">Nenhum</option>
+                <option value="RECESSO" {% if feriado.recesso_literal == 'RECESSO' %}selected{% endif %}>Recesso</option>
+                <option value="RECESSO ESCOLAR" {% if feriado.recesso_literal == 'RECESSO ESCOLAR' %}selected{% endif %}>Recesso Escolar</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>Data de Criação</label>
+            <input type="text" value="{{ feriado.data_criacao.strftime('%Y-%m-%d %H:%M:%S') if feriado.data_criacao else '-' }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Data de Modificação</label>
+            <input type="text" value="{{ feriado.data_modificacao.strftime('%Y-%m-%d %H:%M:%S') if feriado.data_modificacao else '-' }}" readonly disabled>
+        </div>
+        
+        <div style="margin-top: 1.5rem;">
+            <button type="submit" class="btn btn-success">Salvar Alterações</button>
+            <a href="{{ url_for('feriado.listar') }}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

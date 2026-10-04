@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Nova Conta Classificada - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>C147T: Nova Conta Classificada</h2>
+</div>
+
+<div class="form-container">
+    <h3>Criar Nova Conta Classificada</h3>
+    <form method="POST" class="form">
+        <div class="form-group">
+            <label for="conta">Conta <span style="color:red;">*</span></label>
+            <input type="text" id="conta" name="conta" required placeholder="Identificador da conta">
+        </div>
+        
+        <div class="form-group">
+            <label for="codigo_orgao">Código Órgão <span style="color:red;">*</span></label>
+            <input type="text" id="codigo_orgao" name="codigo_orgao" required placeholder="Scoped pela sessão" disabled>
+            <small style="display:block; margin-top:0.25rem; color:#666;">Campo preenchido automaticamente pela sessão</small>
+        </div>
+        
+        <div class="form-group">
+            <label for="codigo_fonte">Fonte de Recursos <span style="color:red;">*</span></label>
+            <select id="codigo_fonte" name="codigo_fonte" required>
+                <option value="">Selecione uma fonte</option>
+                {% for fonte in fontes %}
+                <option value="{{ fonte.codigo_fonte }}">{{ fonte.codigo_fonte }} - {{ fonte.descricao }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="creche">Creche <span style="color:red;">*</span></label>
+            <select id="creche" name="creche" required>
+                <option value="">Selecione</option>
+                <option value="S">Sim</option>
+                <option value="N">Não</option>
+            </select>
+        </div>
+        
+        <div style="margin-top: 1.5rem;">
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <a href="{{ url_for('conta.listar') }}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

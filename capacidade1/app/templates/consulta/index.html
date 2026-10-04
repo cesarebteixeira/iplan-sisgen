@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Relatórios - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>Relatórios e Consultas</h2>
+</div>
+
+<div class="form-container">
+    <h3>Relatórios Disponíveis</h3>
+    
+    <div class="grid">
+        <div class="card">
+             <h3>Relatório de Unidades</h3>
+             <p>Visualizar todas as unidades orçamentárias</p>
+             <a href="{{ url_for('consulta.unidades') }}">Visualizar Relatório</a>
+         </div>
+         
+         <div class="card">
+             <h3>Relatório de Bairros</h3>
+             <p>Visualizar todos os bairros</p>
+             <a href="{{ url_for('consulta.bairros') }}">Visualizar Relatório</a>
+         </div>
+         
+         <div class="card">
+             <h3>Relatório de Contas</h3>
+             <p>Visualizar todas as contas</p>
+             <a href="{{ url_for('consulta.contas') }}">Visualizar Relatório</a>
+         </div>
+         
+         <div class="card">
+             <h3>Relatório de Fontes</h3>
+             <p>Visualizar todas as fontes de financiamento</p>
+             <a href="{{ url_for('consulta.fontes') }}">Visualizar Relatório</a>
+         </div>
+         
+         <div class="card">
+             <h3>Relatório de Grupos</h3>
+             <p>Visualizar todos os grupos organizacionais</p>
+             <a href="{{ url_for('consulta.grupos') }}">Visualizar Relatório</a>
+         </div>
+         
+         <div class="card">
+             <h3>Registro de Auditoria</h3>
+             <p>Visualizar trilha de auditoria do sistema</p>
+             <a href="{{ url_for('consulta.auditoria') }}">Visualizar Auditoria</a>
+         </div>
+         
+         <div class="card">
+             <h3>Registros Históricos</h3>
+             <p>Visualizar alterações históricas</p>
+             <a href="{{ url_for('consulta.historico') }}">Visualizar Histórico</a>
+         </div>
+    </div>
+</div>
+{% endblock %}

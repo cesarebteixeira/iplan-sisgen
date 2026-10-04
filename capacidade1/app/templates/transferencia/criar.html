@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Nova Transferência - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>Nova Transferência entre Órgãos</h2>
+</div>
+
+<div class="form-container">
+    <h3>Registrar Nova Transferência</h3>
+    <form method="POST" class="form">
+        <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" name="descricao" rows="4" placeholder="Detalhes da transferência"></textarea>
+        </div>
+        
+        <div style="margin-top: 1.5rem;">
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <a href="{{ url_for('transferencia.listar') }}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

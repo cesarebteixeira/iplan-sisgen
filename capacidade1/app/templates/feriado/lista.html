@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Feriados - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>C192T: Feriados do Órgão</h2>
+    <div>
+        <a href="{{ url_for('feriado.criar') }}" class="btn btn-primary">Novo Feriado</a>
+    </div>
+</div>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Data</th>
+            <th>Código Órgão</th>
+            <th>Tipo Órgão</th>
+            <th>Descrição</th>
+            <th>Creche</th>
+            <th>Recesso</th>
+            <th>Data de Criação</th>
+            <th>Data de Modificação</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if feriados %}
+            {% for item in feriados %}
+            <tr>
+                <td>{{ item.data.strftime('%d/%m/%Y') if item.data else '-' }}</td>
+                <td>{{ item.codigo_orgao }}</td>
+                <td>{{ item.tipo_orgao }}</td>
+                <td>{{ item.descricao }}</td>
+                <td>{{ item.creche if item.creche else '-' }}</td>
+                <td>{{ item.recesso_literal if item.recesso_literal else '-' }}</td>
+                <td>{{ item.data_criacao.strftime('%Y-%m-%d %H:%M:%S') if item.data_criacao else '-' }}</td>
+                <td>{{ item.data_modificacao.strftime('%Y-%m-%d %H:%M:%S') if item.data_modificacao else '-' }}</td>
+                <td>
+                    <a href="{{ url_for('feriado.editar', data=item.data.strftime('%d%m%Y'), codigo_orgao=item.codigo_orgao, tipo_orgao=item.tipo_orgao) }}" class="btn btn-sm btn-info">Editar</a>
+                    <form method="POST" action="{{ url_for('feriado.deletar', data=item.data.strftime('%d%m%Y'), codigo_orgao=item.codigo_orgao, tipo_orgao=item.tipo_orgao) }}" style="display:inline;">
+                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Deletar este registro?')">Deletar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr><td colspan="9">Nenhum registro encontrado</td></tr>
+        {% endif %}
+    </tbody>
+</table>
+
+{% if pagination %}
+<div class="pagination">
+    {% if pagination.has_prev %}
+        <a href="{{ url_for('feriado.listar', page=pagination.prev_num) }}" class="btn btn-secondary">Anterior</a>
+    {% endif %}
+    <span>Página {{ page }} de {{ pagination.pages }}</span>
+    {% if pagination.has_next %}
+        <a href="{{ url_for('feriado.listar', page=pagination.next_num) }}" class="btn btn-secondary">Próximo</a>
+    {% endif %}
+</div>
+{% endif %}
+{% endblock %}

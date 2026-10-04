@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Tipo de Processo - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>C162T: Editar Tipo de Processo</h2>
+</div>
+
+<div class="form-container">
+    <h3>Editar Tipo de Processo</h3>
+    <form method="POST" class="form">
+        <div class="form-group">
+            <label>Código</label>
+            <input type="text" value="{{ "%02d" | format(tipo_processo.codigo_tipo) }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Tipo Órgão</label>
+            <input type="text" value="{{ tipo_processo.tipo_orgao }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label for="descricao">Descrição <span style="color:red;">*</span></label>
+            <input type="text" id="descricao" name="descricao" maxlength="40" required value="{{ tipo_processo.descricao }}">
+        </div>
+        
+        <div class="form-group">
+            <label>Data de Criação</label>
+            <input type="text" value="{{ tipo_processo.data_criacao.strftime('%Y-%m-%d %H:%M:%S') if tipo_processo.data_criacao else '-' }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Data de Modificação</label>
+            <input type="text" value="{{ tipo_processo.data_modificacao.strftime('%Y-%m-%d %H:%M:%S') if tipo_processo.data_modificacao else '-' }}" readonly disabled>
+        </div>
+        
+        <div style="margin-top: 1.5rem;">
+            <button type="submit" class="btn btn-success">Salvar Alterações</button>
+            <a href="{{ url_for('tipo_processo.listar') }}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

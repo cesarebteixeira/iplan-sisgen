@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Novo Período de Referência - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>C172T: Novo Período de Referência</h2>
+</div>
+
+<div class="form-container">
+    <h3>Criar Novo Período de Referência</h3>
+    <form method="POST" class="form">
+        <div class="form-group">
+            <label for="ano">Ano <span style="color:red;">*</span></label>
+            <input type="number" id="ano" name="ano" min="1994" max="2099" required placeholder="1994-2099">
+        </div>
+        
+        <div class="form-group">
+            <label for="mes">Mês <span style="color:red;">*</span></label>
+            <input type="number" id="mes" name="mes" min="1" max="12" required placeholder="1-12">
+        </div>
+        
+        <div style="background-color:#f0f0f0; padding:1rem; border-radius:4px; margin-bottom:1.5rem;">
+            <p><strong>Campos Computados:</strong></p>
+            <ul style="margin-left:1.5rem; margin-top:0.5rem;">
+                <li>Dia Início: sempre 1</li>
+                <li>Mês Início: sempre igual ao mês informado</li>
+                <li>Dia Limite: último dia do mês</li>
+                <li>Mês Limite: sempre igual ao mês informado</li>
+            </ul>
+        </div>
+        
+        <div style="margin-top: 1.5rem;">
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <a href="{{ url_for('periodo.listar') }}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

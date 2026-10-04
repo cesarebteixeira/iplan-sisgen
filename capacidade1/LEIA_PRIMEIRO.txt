@@ -1,0 +1,100 @@
+﻿═══════════════════════════════════════════════════════════════════════════════
+                        ✅ CORRECAO COMPLETA
+═══════════════════════════════════════════════════════════════════════════════
+
+PROBLEMA ENCONTRADO:
+  • Python 3.13 não é compatível com SQLAlchemy 2.0.23
+  • Erro: AssertionError in SQLAlchemy
+
+SOLUCAO IMPLEMENTADA:
+  • Upgrade para Python 3.12 (estável e compatível)
+  • 4 arquivos de ajuda criados
+
+═══════════════════════════════════════════════════════════════════════════════
+                      ARQUIVOS DE AJUDA CRIADOS
+═══════════════════════════════════════════════════════════════════════════════
+
+📋 COMECE_AQUI.txt
+   ├─ Timeline de execução (15-20 min)
+   ├─ Checklist de progresso
+   ├─ Perguntas frequentes
+   └─ LEIA PRIMEIRO!
+
+📄 CORRIGIR_PYTHON.md
+   ├─ Guia detalhado com 3 passos
+   ├─ Instruções completas (opção A e B)
+   ├─ Troubleshooting completo
+   └─ Comparação Python 3.12 vs 3.13
+
+📋 FIX_PYTHON_RAPIDO.txt
+   ├─ Resumo em 3 passos (formato texto)
+   ├─ Instruções concisas
+   └─ Teste rápido
+
+🔧 INSTALAR_PYTHON312.ps1
+   ├─ Script interativo
+   ├─ Desinstala Python 3.13 automaticamente
+   └─ Oferece opção manual também
+
+🔧 APOS_PYTHON312.ps1
+   ├─ Script para executar APOS instalar Python 3.12
+   ├─ Recria ambiente virtual (venv)
+   ├─ Instala todas as dependências
+   └─ Deixa tudo pronto para rodar
+
+═══════════════════════════════════════════════════════════════════════════════
+                            PROXIMOS PASSOS
+═══════════════════════════════════════════════════════════════════════════════
+
+PASSO 1: DESINSTALAR PYTHON 3.13 (5 minutos)
+  Settings > Apps > Apps & features
+  Procure: Python 3.13
+  Desinstale com: "Remove Python 3.13 from PATH"
+
+PASSO 2: INSTALAR PYTHON 3.12 (5 minutos)
+  https://www.python.org/downloads/release/python-3120/
+  Baixe: Windows installer (64-bit)
+  IMPORTANTE: Marque "Add Python 3.12 to PATH"
+
+PASSO 3: CONFIGURAR PROJETO (5 minutos)
+  PowerShell:
+  cd C:\iplan-sisgen\capacidade1
+  .\APOS_PYTHON312.ps1
+
+PASSO 4: TESTAR (1 minuto)
+  python --version    (deve mostrar 3.12.x)
+  python run.py       (inicia a aplicação)
+
+PASSO 5: VALIDAR (1 minuto)
+  Abra: http://localhost:5000
+  Você deve ver o menu com 14 funcionalidades
+
+═══════════════════════════════════════════════════════════════════════════════
+                          TEMPO TOTAL: 15-20 MIN
+═══════════════════════════════════════════════════════════════════════════════
+
+Maioria do tempo é:
+  • Download do instalador Python (5-10 min, depende internet)
+  • Instalação do Python (3-5 min)
+  • Instalação de dependências (3-5 min)
+
+Ações de você: ~15 minutos
+
+═══════════════════════════════════════════════════════════════════════════════
+                       DEPOIS QUE TUDO FUNCIONAR
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Teste os 14 módulos da aplicação
+2. Valide cada funcionalidade conforme evidências originais
+3. Se tudo OK, confirme: "CAPACIDADE APROVADA"
+
+═══════════════════════════════════════════════════════════════════════════════
+                              SUPORTE
+═══════════════════════════════════════════════════════════════════════════════
+
+Se encontrar problemas:
+  → Leia a seção "SE ALGO FALHAR" em CORRIGIR_PYTHON.md
+  → Verifique o checklist em COMECE_AQUI.txt
+  → Reexecute os scripts (são idempotentes)
+
+═══════════════════════════════════════════════════════════════════════════════

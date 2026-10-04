@@ -1,0 +1,89 @@
+================================================================================
+                    CORRECAO RAPIDA: Python 3.13 → 3.12
+================================================================================
+
+PROBLEMA: SQLAlchemy incompatível com Python 3.13
+SOLUCAO: Usar Python 3.12 (versão estável)
+
+================================================================================
+                              3 PASSOS RAPIDOS
+================================================================================
+
+PASSO 1: DESINSTALAR PYTHON 3.13
+────────────────────────────────
+
+Abra: Settings > Apps > Apps & features
+Procure: Python 3.13
+Desinstale: Remove Python 3.13 from PATH (MARQUE!)
+
+Ou no PowerShell (Admin):
+  cd C:\iplan-sisgen\capacidade1
+  .\INSTALAR_PYTHON312.ps1
+  [escolha 1]
+
+PASSO 2: INSTALAR PYTHON 3.12
+──────────────────────────────
+
+Site: https://www.python.org/downloads/release/python-3120/
+
+Baixe: python-3.12.0-amd64.exe (64-bit installer)
+
+Execute instalador:
+  ☑ Install launcher for all users
+  ☑ Add Python 3.12 to PATH         ← IMPORTANTE!
+  Clique: Install Now
+  Clique: Close
+
+PASSO 3: RECONFIGURAR PROJETO
+──────────────────────────────
+
+PowerShell (normal):
+  cd C:\iplan-sisgen\capacidade1
+  .\APOS_PYTHON312.ps1
+
+Espere completar (vai instalar dependências)
+
+================================================================================
+                           TESTE RAPIDO
+================================================================================
+
+PowerShell:
+  python --version
+
+Esperado: Python 3.12.x
+
+Se OK:
+  cd C:\iplan-sisgen\capacidade1
+  .\venv\Scripts\Activate.ps1
+  python run.py
+
+Acesse: http://localhost:5000
+
+================================================================================
+                         SE ALGO FALHAR
+================================================================================
+
+Erro: "python is not recognized"
+Solução: Python não está no PATH
+  → Desinstale e reinstale Python 3.12, MARCANDO "Add to PATH"
+  → Reinicie PowerShell
+
+Erro: "Module not found"
+Solução: venv com Python 3.13
+  → Remove-Item -Recurse -Force venv
+  → python -m venv venv
+  → .\venv\Scripts\Activate.ps1
+  → pip install -r requirements.txt
+
+================================================================================
+                         DOCUMENTACAO COMPLETA
+================================================================================
+
+Leia: C:\iplan-sisgen\capacidade1\CORRIGIR_PYTHON.md
+
+Tem instruções detalhadas e troubleshooting completo.
+
+================================================================================
+
+Pronto! Em 15-20 minutos você terá a aplicação rodando.
+

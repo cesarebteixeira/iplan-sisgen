@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Transição - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>Editar Transição de Órgãos</h2>
+</div>
+
+<div class="form-container">
+    <h3>Editar Transição</h3>
+    <form method="POST" class="form">
+        <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" name="descricao" rows="4">{{ transicao.descricao if transicao.descricao else '' }}</textarea>
+        </div>
+        
+        <div class="form-group">
+            <label>Data de Criação</label>
+            <input type="text" value="{{ transicao.data_criacao.strftime('%Y-%m-%d %H:%M:%S') if transicao.data_criacao else '-' }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Data de Modificação</label>
+            <input type="text" value="{{ transicao.data_modificacao.strftime('%Y-%m-%d %H:%M:%S') if transicao.data_modificacao else '-' }}" readonly disabled>
+        </div>
+        
+        <div style="margin-top: 1.5rem;">
+            <button type="submit" class="btn btn-success">Salvar Alterações</button>
+            <a href="{{ url_for('transicao.listar') }}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

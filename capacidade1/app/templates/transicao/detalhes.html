@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Detalhes da Transição - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>Detalhes da Transição</h2>
+    <div>
+        <a href="{{ url_for('transicao.listar') }}" class="btn btn-secondary">Voltar à Listagem</a>
+    </div>
+</div>
+
+<div class="form-container">
+    <h3>Informações da Transição</h3>
+    
+    <div class="form">
+        <div class="form-group">
+            <label>ID</label>
+            <input type="text" value="{{ transicao.id if transicao.id else '-' }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Descrição</label>
+            <textarea readonly disabled style="resize: none;">{{ transicao.descricao if transicao.descricao else '-' }}</textarea>
+        </div>
+        
+        <div class="form-group">
+            <label>Data de Criação</label>
+            <input type="text" value="{{ transicao.data_criacao.strftime('%Y-%m-%d %H:%M:%S') if transicao.data_criacao else '-' }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Data de Modificação</label>
+            <input type="text" value="{{ transicao.data_modificacao.strftime('%Y-%m-%d %H:%M:%S') if transicao.data_modificacao else '-' }}" readonly disabled>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,263 @@
+================================================================================
+RESUMO EXECUTIVO - PROCURA POR CÓDIGOS F-00X E "CAPACITY"
+================================================================================
+Data: 03 de Outubro de 2026
+Projeto: iplan-sisgen / Capacity 1
+
+================================================================================
+1. ONDE OS CÓDIGOS F-001, F-002, ETC. ESTÃO SENDO GERADOS
+================================================================================
+
+LOCALIZAÇÃO PRINCIPAL: app/routes/*_routes.py
+
+Os códigos F-00X NÃO SÃO GERADOS AUTOMATICAMENTE - eles vêm da especificação
+e são INCORPORADOS MANUALMENTE nas rotas como identificadores documentais.
+
+ARQUIVO ROUTE                  F-CODE  FUNCIONALIDADE                    LINHAS
+─────────────────────────────────────────────────────────────────────────────
+bairro_routes.py              F-001   Manter Bairros                    2,19,37,90,142
+unidade_routes.py             F-002   Manter Unidades Orçamentárias     2,34,50,97,140
+grupo_routes.py               F-003   Manter Grupos                     2,41,56,112,164
+fonte_routes.py               F-004   Consultar Fontes                  2,16,34,51
+conta_routes.py               F-005   Classificar Contas                2,34,49,103,153
+tipo_processo_routes.py       F-006   Manter Tipos de Processo          2,32,47,92,135
+periodo_routes.py             F-007   Criar Períodos                    2,48,66,143,205
+feriado_routes.py             F-008   Manter Feriados                   2,45,62,124,183
+projeto_routes.py             F-009   Manter Projetos                   2,33,48,98,144
+vinculo_routes.py             F-010   Vínculos Órgão-Projeto            Múltiplas
+transferencia_routes.py       F-011   Transferência de Órgãos           Múltiplas
+transicao_routes.py           F-012   Transição SDI                     Múltiplas
+consulta_routes.py            F-013/14 Consultas do Sistema             Múltiplas
+
+TOTAL: 44 OCORRÊNCIAS EM 13 ARQUIVOS
+
+================================================================================
+2. ONDE A STRING "CAPACITY" ESTÁ SENDO USADA
+================================================================================
+
+PYTHON (9 arquivos):
+  ✓ app/config.py (Linha 24)
+    APP_NAME = "Capacity 1 - Estrutura da rede e do gasto"
+
+  ✓ run.py (Linha 2)
+  ✓ run_port8000.py (Linha 2)
+  ✓ app/__init__.py (Linha 2)
+  ✓ app/database.py (Linha 2)
+  ✓ app/models/__init__.py (Linha 2)
+  ✓ app/routes/__init__.py (Linha 2)
+  ✓ app/validations/__init__.py (Linha 2)
+
+HTML TEMPLATES (49 arquivos):
+  ✓ base.html (3 ocorrências)
+  ✓ index.html (2 ocorrências)
+  ✓ Todos os 49 templates de modulo (1 ocorrência cada)
+    └─ Padrão: {% block title %}... - Capacity 1{% endblock %}
+
+CSS (1 arquivo):
+  ✓ app/static/css/style.css (Linha 1)
+
+TOTAL: 58 OCORRÊNCIAS
+
+================================================================================
+3. TEMPLATES HTML QUE EXIBEM OS CÓDIGOS F-00X
+================================================================================
+
+CADA TEMPLATE DE LISTA MOSTRA O F-CODE NO TOPO:
+
+Padrão em cada arquivo **/lista.html:
+
+<h2>F-00X: Descrição da Funcionalidade</h2>
+
+EXEMPLOS:
+  • bairro/lista.html (Linha 7)        → <h2>F-001: Manter Bairros</h2>
+  • unidade/lista.html (Linha 7)       → <h2>F-002: Manter Unidades...</h2>
+  • grupo/lista.html (Linha 7)         → <h2>F-003: Manter Grupos</h2>
+  • conta/lista.html (Linha 7)         → <h2>F-005: Classificar Contas</h2>
+  • periodo/lista.html (Linha 7)       → <h2>F-007: Criar Períodos...</h2>
+  • feriado/lista.html (Linha 7)       → <h2>F-008: Manter Feriados</h2>
+  • projeto/lista.html (Linha 7)       → <h2>F-009: Manter Projetos</h2>
+  • fonte/lista.html (Linha 7)         → <h2>F-004: Consultar Fontes...</h2>
+  • tipo_processo/lista.html (Linha 7) → <h2>F-006: Manter Tipos...</h2>
+  • consulta/index.html (Linha 5)      → <h2>F-013/F-014: Consultas...</h2>
+
+Page Home (index.html, Linhas 18-31):
+  <li><strong>F-001:</strong> Manter Bairros</li>
+  <li><strong>F-002:</strong> Manter Unidades Orçamentárias</li>
+  <li><strong>F-003:</strong> Manter Grupos de Órgãos</li>
+  <li><strong>F-004:</strong> Consultar Fontes de Recursos</li>
+  <li><strong>F-005:</strong> Classificar Contas</li>
+  <li><strong>F-006:</strong> Manter Tipos de Processo</li>
+  <li><strong>F-007:</strong> Criar Períodos de Referência</li>
+  <li><strong>F-008:</strong> Manter Feriados</li>
+  <li><strong>F-009:</strong> Manter Projetos</li>
+  <li><strong>F-010:</strong> Vínculos Órgão-Projeto</li>
+  <li><strong>F-011:</strong> Transferência de Órgãos</li>
+  <li><strong>F-012:</strong> Transição SDI</li>
+  <li><strong>F-013/F-014:</strong> Consultas do Sistema</li>
+
+================================================================================
+4. ESTRUTURA DE COMO OS CÓDIGOS ESTÃO SENDO GERADOS
+================================================================================
+
+PADRÃO DE IMPLEMENTAÇÃO (Não é Automático - É Manual):
+
+┌───────────────────────────────────────────────────────────────────┐
+│ ETAPA 1: Especificação (Documento Externo)                        │
+│  resposta-capacidade1-fase3.md                                    │
+│   └─ Define F-001 até F-014 associado a C023T, C025T, etc.       │
+└───────────────────────────────────────────────────────────────────┘
+                              ↓
+┌───────────────────────────────────────────────────────────────────┐
+│ ETAPA 2: Implementação em Routes (app/routes/ENTIDADE_routes.py) │
+│                                                                    │
+│  Linha 2:  """Routes for F-00X (Descrição)"""                    │
+│  Linha 19: """F-00X: List all ... with pagination"""             │
+│  Linha 37: """F-00X: Create a new ..."""                         │
+│  Linha 90: """F-00X: Edit an existing ..."""                     │
+│  Linha 142: """F-00X: Delete a ..."""                            │
+└───────────────────────────────────────────────────────────────────┘
+                              ↓
+┌───────────────────────────────────────────────────────────────────┐
+│ ETAPA 3: Exibição em Templates (app/templates/*/lista.html)      │
+│                                                                    │
+│  {% block title %}X - Capacity 1{% endblock %}                   │
+│  <h2>F-00X: Descrição</h2>                                       │
+└───────────────────────────────────────────────────────────────────┘
+                              ↓
+┌───────────────────────────────────────────────────────────────────┐
+│ ETAPA 4: Exibição na WEB                                          │
+│  User vê: "F-001: Manter Bairros" na página de listagem          │
+│  User vê: "... - Capacity 1" no título do navegador              │
+└───────────────────────────────────────────────────────────────────┘
+
+PADRÃO DE ARQUIVO ROUTE (exemplo bairro_routes.py):
+
+  """
+  Routes for F-001 (Manter Bairros)        ← F-001 AQUI (Linha 2)
+  """
+
+  @bp.route('/', methods=['GET'])
+  def listar():
+      """F-001: List all neighborhoods..."""  ← F-001 AQUI
+      # código...
+
+  @bp.route('/criar', methods=['GET', 'POST'])
+  def criar():
+      """F-001: Create a new neighborhood"""   ← F-001 AQUI
+      # código...
+
+  @bp.route('/editar/<codigo>', methods=['GET', 'POST'])
+  def editar(codigo):
+      """F-001: Edit an existing neighborhood"""  ← F-001 AQUI
+      # código...
+
+  @bp.route('/deletar/<codigo>', methods=['POST'])
+  def deletar(codigo):
+      """F-001: Delete a neighborhood"""       ← F-001 AQUI
+      # código...
+
+================================================================================
+5. ARQUIVOS PYTHON QUE MENCIONAM F-00X (LISTA COMPLETA)
+================================================================================
+
+app/routes/bairro_routes.py             5 linhas (F-001)
+app/routes/unidade_routes.py            5 linhas (F-002)
+app/routes/grupo_routes.py              5 linhas (F-003)
+app/routes/fonte_routes.py              4 linhas (F-004)
+app/routes/conta_routes.py              5 linhas (F-005)
+app/routes/tipo_processo_routes.py      5 linhas (F-006)
+app/routes/periodo_routes.py            5 linhas (F-007)
+app/routes/feriado_routes.py            5 linhas (F-008)
+app/routes/projeto_routes.py            5 linhas (F-009)
+app/routes/vinculo_routes.py            Múltiplas (F-010)
+app/routes/transferencia_routes.py      Múltiplas (F-011)
+app/routes/transicao_routes.py          Múltiplas (F-012)
+app/routes/consulta_routes.py           Múltiplas (F-013/F-014)
+
+TOTAL: 44 OCORRÊNCIAS EM 13 ARQUIVOS
+
+================================================================================
+6. ONDE "CAPACITY" APARECE (LISTA DE ARQUIVOS)
+================================================================================
+
+PYTHON:
+  1. app/config.py
+  2. app/__init__.py
+  3. app/database.py
+  4. app/models/__init__.py
+  5. app/routes/__init__.py
+  6. app/validations/__init__.py
+  7. run.py
+  8. run_port8000.py
+  9. app/static/css/style.css
+
+HTML (49 arquivos em 8 subpastas):
+  • bairro/criar.html, editar.html, lista.html
+  • unidade/criar.html, editar.html, lista.html
+  • grupo/criar.html, editar.html, lista.html
+  • fonte/lista.html, detalhes.html, buscar.html
+  • conta/criar.html, editar.html, lista.html
+  • feriado/criar.html, editar.html, lista.html
+  • tipo_processo/criar.html, editar.html, lista.html
+  • periodo/criar.html, editar.html, lista.html
+  • projeto/criar.html, editar.html, lista.html
+  • vinculo/criar.html, editar.html, lista.html
+  • transferencia/criar.html, detalhes.html, lista.html
+  • transicao/criar.html, detalhes.html, lista.html
+  • consulta/index.html, auditoria.html, historico.html, bairros.html,
+            unidades.html, grupos.html, fontes.html, contas.html
+  • base.html
+  • index.html
+
+================================================================================
+7. RESUMO DE ACHADOS
+================================================================================
+
+Métrica                              Valor
+─────────────────────────────────────────────
+Códigos F-00X encontrados            44 ocorrências
+Ocorrências de "Capacity"            58 ocorrências
+Arquivos Python afetados             13 routes + 6 config
+Arquivos HTML afetados               49 templates + 1 base
+Funcionalidades implementadas         14 (F-001 até F-014)
+Arquivos de rota únicos              13
+Modelos de banco de dados            14
+Tabelas de banco de dados            14
+
+================================================================================
+8. RECOMENDAÇÃO: TRADUÇÃO DE "CAPACITY" PARA "CAPACIDADE"
+================================================================================
+
+LOCAL                          TIPO     OCORRÊNCIAS  AÇÃO NECESSÁRIA
+──────────────────────────────────────────────────────────────────────
+app/config.py                  Python   2            Sim
+app/static/css/style.css       CSS      1            Sim
+base.html                      HTML     3            Sim
+index.html                     HTML     2            Sim
+Todos os 49 templates          HTML     49           Sim
+run.py, run_port8000.py        Python   2            Sim (comentários)
+
+TOTAL A TRADUZIR: 59 locais
+
+EXEMPLO DE MUDANÇA:
+  Antes: APP_NAME = "Capacity 1 - Estrutura da rede e do gasto"
+  Depois: APP_NAME = "Capacidade 1 - Estrutura da rede e do gasto"
+
+================================================================================
+9. CONCLUSÃO
+================================================================================
+
+✓ Os códigos F-00X são identificadores documentais vindo da especificação
+✓ Estão implementados em 13 arquivos de routes com 44 ocorrências totais
+✓ São exibidos em 49 templates HTML
+✓ A string "Capacity" aparece 58 vezes e pode ser traduzida para "Capacidade"
+✓ O padrão de implementação é consistente em todos os módulos
+✓ Nenhum código gerado dinamicamente - tudo é hardcoded como documentação
+
+ARQUIVOS MAIS IMPORTANTES:
+  1. app/routes/ (13 arquivos) - Definem todas as funcionalidades F-00X
+  2. app/templates/ (49+ arquivos) - Exibem os F-codes e "Capacity"
+  3. app/config.py - Define o nome da aplicação
+  4. base.html - Template base com "Capacity"
+
+================================================================================

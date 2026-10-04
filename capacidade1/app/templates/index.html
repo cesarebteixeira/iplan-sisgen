@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}Início - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>Bem-vindo ao Capacidade 1</h2>
+</div>
+
+<div class="form-container">
+    <h3>Sistema de Gestão da Estrutura da Rede e do Gasto</h3>
+    
+    <p style="margin-bottom: 1rem; font-size: 1.05rem;">
+        Versão 1.0.0 | 14 Módulos Operacionais
+    </p>
+    
+    <p style="margin-bottom: 2rem; color: #7f8c8d;">
+        Este sistema gerencia a estrutura organizacional, as unidades administrativas e os dados financeiros da rede.
+    </p>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <h3>Unidades</h3>
+        <p><strong>C025T</strong> - Gerenciar unidades orçamentárias (Unidades Orçamentárias)</p>
+        <a href="{{ url_for('unidade.listar') }}">Ir para Unidades →</a>
+    </div>
+    
+    <div class="card">
+        <h3>Vínculos</h3>
+        <p><strong>C020T</strong> - Gerenciar vínculos institucionais (Vínculos)</p>
+        <a href="{{ url_for('vinculo.listar') }}">Ir para Vínculos →</a>
+    </div>
+    
+    <div class="card">
+        <h3>Bairros</h3>
+        <p><strong>C030T</strong> - Gerenciar regiões de bairros (Bairros)</p>
+        <a href="{{ url_for('bairro.listar') }}">Ir para Bairros →</a>
+    </div>
+    
+    <div class="card">
+        <h3>Contas</h3>
+        <p><strong>C035T</strong> - Gerenciar contas financeiras (Contas)</p>
+        <a href="{{ url_for('conta.listar') }}">Ir para Contas →</a>
+    </div>
+    
+    <div class="card">
+        <h3>Fontes</h3>
+        <p><strong>C040T</strong> - Gerenciar fontes de recursos (Fontes)</p>
+        <a href="{{ url_for('fonte.listar') }}">Ir para Fontes →</a>
+    </div>
+    
+    <div class="card">
+        <h3>Grupos</h3>
+        <p><strong>C045T</strong> - Gerenciar grupos organizacionais (Grupos)</p>
+        <a href="{{ url_for('grupo.listar') }}">Ir para Grupos →</a>
+    </div>
+    
+    <div class="card">
+        <h3>Períodos</h3>
+        <p><strong>C050T</strong> - Gerenciar períodos fiscais (Períodos)</p>
+        <a href="{{ url_for('periodo.listar') }}">Ir para Períodos →</a>
+    </div>
+    
+    <div class="card">
+        <h3>Feriados</h3>
+        <p><strong>C055T</strong> - Gerenciar feriados públicos (Feriados)</p>
+        <a href="{{ url_for('feriado.listar') }}">Ir para Feriados →</a>
+    </div>
+    
+    <div class="card">
+        <h3>Projetos</h3>
+        <p><strong>C060T</strong> - Gerenciar projetos (Projetos)</p>
+        <a href="{{ url_for('projeto.listar') }}">Ir para Projetos →</a>
+    </div>
+    
+    <div class="card">
+        <h3>Tipos de Processo</h3>
+        <p><strong>C065T</strong> - Gerenciar tipos de processos</p>
+        <a href="{{ url_for('tipo_processo.listar') }}">Ir para Tipos de Processo →</a>
+    </div>
+    
+    <div class="card">
+        <h3>Transferências</h3>
+        <p><strong>C070T</strong> - Gerenciar transferências (Transferências)</p>
+        <a href="{{ url_for('transferencia.listar') }}">Ir para Transferências →</a>
+    </div>
+    
+    <div class="card">
+        <h3>Transições</h3>
+        <p><strong>C075T</strong> - Gerenciar transições (Transições)</p>
+        <a href="{{ url_for('transicao.listar') }}">Ir para Transições →</a>
+    </div>
+    
+    <div class="card">
+        <h3>Relatórios e Consultas</h3>
+        <p><strong>Consulta</strong> - Visualizar relatórios do sistema e dados históricos</p>
+        <a href="{{ url_for('consulta.index') }}">Ir para Relatórios →</a>
+    </div>
+    
+    <div class="card">
+        <h3>Informações do Sistema</h3>
+        <p><strong>Sobre</strong> - Informações do sistema e documentação</p>
+        <a href="#">Informações do Sistema →</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Relatório de Unidades - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>Relatório de Unidades Orçamentárias</h2>
+     <a href="{{ url_for('consulta.index') }}" class="btn btn-secondary">Voltar aos Relatórios</a>
+</div>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Código</th>
+             <th>Descrição</th>
+             <th>Data de Criação</th>
+             <th>Data de Modificação</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if unidades %}
+            {% for unidade in unidades %}
+            <tr>
+                <td>{{ unidade.codigo_unidade }}</td>
+                <td>{{ unidade.descricao }}</td>
+                <td>{{ unidade.data_criacao }}</td>
+                <td>{{ unidade.data_modificacao }}</td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr><td colspan="4">Nenhum registro encontrado</td></tr>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}

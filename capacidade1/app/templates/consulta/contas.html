@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Relatório de Contas - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>Relatório de Contas</h2>
+     <a href="{{ url_for('consulta.index') }}" class="btn btn-secondary">Voltar aos Relatórios</a>
+</div>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Código</th>
+             <th>Descrição</th>
+             <th>Data de Criação</th>
+             <th>Data de Modificação</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if contas %}
+            {% for conta in contas %}
+            <tr>
+                <td>{{ conta.codigo_conta }}</td>
+                <td>{{ conta.descricao }}</td>
+                <td>{{ conta.data_criacao }}</td>
+                <td>{{ conta.data_modificacao }}</td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr><td colspan="4">Nenhum registro encontrado</td></tr>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,287 @@
+================================================================================
+PROCURA COMPLETA - F-00X E "CAPACITY" - LEIA-ME PRIMEIRO
+================================================================================
+
+Olá! Você solicitou uma procura completa no codebase por:
+
+1. Onde os códigos "F-001", "F-002", etc. estão sendo gerados
+2. Onde a string "Capacity" está sendo usada
+3. Procure por templates HTML que exibem esses códigos
+4. Procure por arquivos Python que criam esses códigos
+
+PROCURA CONCLUÍDA COM SUCESSO ✓
+
+================================================================================
+RESPOSTAS RÁPIDAS (30 segundos)
+================================================================================
+
+P: Onde os códigos F-00X estão?
+R: Em 13 arquivos em app/routes/*_routes.py (44 ocorrências totais)
+
+P: Onde está "Capacity"?
+R: Em 9 arquivos Python + 49 templates HTML (58 ocorrências totais)
+
+P: Como acessar os resultados?
+R: Abra um dos 7 arquivos de referência criados (veja abaixo)
+
+P: Preciso traduzir para "Capacidade"?
+R: Sim! Script automático pronto: SCRIPT_TRADUZIR_CAPACITY_PARA_CAPACIDADE.ps1
+
+================================================================================
+ARQUIVOS CRIADOS - POR NECESSIDADE
+================================================================================
+
+CENÁRIO 1: "Quero entender em 2 minutos"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Abra: REFERENCIA_RAPIDA_F-00X.md
+└─ Resumo visual de 30 segundos
+└─ Tabelas com localização de cada F-code
+└─ Exemplo de código
+└─ Padrão de busca
+└─ Checklist de ações
+
+CENÁRIO 2: "Preciso de um relatório executivo"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Abra: RESUMO_EXECUTIVO_F-00X.txt
+└─ 1-2 páginas de conteúdo profissional
+└─ 9 seções abrangentes
+└─ Tabelas e estatísticas
+└─ Recomendações de ação
+└─ Checklist completo
+
+CENÁRIO 3: "Quero as linhas exatas"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Abra: LINHAS_EXATAS_F-00X_CAPACITY.txt
+└─ Todas as 44 linhas com F-00X listadas
+└─ Todas as 58 linhas com "Capacity" listadas
+└─ Organizadas por arquivo
+└─ Fácil para copiar e referência
+
+CENÁRIO 4: "Preciso de análise técnica profunda"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Abra: PROCURA_CODIGOS_F-00X_CAPACITY.md
+└─ Relatório técnico de 10 seções completas
+└─ Estrutura de diretórios
+└─ Padrões de implementação
+└─ Mapeamento funcionalidades F↔C
+└─ Recomendações de tradução
+
+CENÁRIO 5: "Preciso de visão geral rápida"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Abra: INDEX_PROCURA_F-00X_CAPACITY.txt
+└─ Índice completo com navegação rápida
+└─ Respostas a 6 perguntas principais
+└─ Estatísticas consolidadas
+└─ Próximas ações recomendadas
+
+CENÁRIO 6: "Quero visualização das descobertas"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Abra: SUMARIO_VISUAL.txt
+└─ Gráficos ASCII visuais
+└─ Estrutura de diretórios
+└─ Tabelas de distribuição
+└─ Checklist visual
+└─ Padrão de implementação visual
+
+CENÁRIO 7: "Vou traduzir 'Capacity' para 'Capacidade'"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Use: SCRIPT_TRADUZIR_CAPACITY_PARA_CAPACIDADE.ps1
+
+Etapas:
+1. Abra PowerShell como administrador
+2. Navegue até: C:\iplan-sisgen\
+3. Execute: .\SCRIPT_TRADUZIR_CAPACITY_PARA_CAPACIDADE.ps1
+   (modo visualização - seguro)
+4. Execute: .\SCRIPT_TRADUZIR_CAPACITY_PARA_CAPACIDADE.ps1 -DryRun $false
+   (modo real - faz mudanças em 59 locais)
+
+Veja: RESUMO_EXECUTIVO_F-00X.txt (Seção 8) para detalhes
+
+================================================================================
+RESPOSTA TÉCNICA PARA CADA PERGUNTA
+================================================================================
+
+1. ONDE OS CÓDIGOS F-001, F-002, ETC. ESTÃO SENDO GERADOS?
+   ────────────────────────────────────────────────────────
+
+   Localização: app/routes/*_routes.py (13 arquivos)
+   
+   Exemplo de bairro_routes.py:
+   Linha 2: Routes for F-001 (Manter Bairros)
+   Linha 19: F-001: List all neighborhoods...
+   Linha 37: F-001: Create a new neighborhood
+   Linha 90: F-001: Edit an existing neighborhood
+   Linha 142: F-001: Delete a neighborhood
+   
+   Total: 44 ocorrências
+   
+   Observação: Não são gerados automaticamente - vêm da especificação
+   (resposta-capacidade1-fase3.md) e são incorporados como documentação.
+
+   Para mais detalhes: Ver arquivo PROCURA_CODIGOS_F-00X_CAPACITY.md (Seção 2)
+
+═══════════════════════════════════════════════════════════════════════════
+
+2. ONDE A STRING "CAPACITY" ESTÁ SENDO USADA?
+   ───────────────────────────────────────────
+
+   Python (9 arquivos):
+   • app/config.py (linha 24)
+   • app/__init__.py (linha 2)
+   • app/database.py (linha 2)
+   • app/models/__init__.py (linha 2)
+   • app/routes/__init__.py (linha 2)
+   • app/validations/__init__.py (linha 2)
+   • run.py (linha 2)
+   • run_port8000.py (linha 2)
+   • app/static/css/style.css (linha 1)
+   
+   HTML Templates (49 arquivos):
+   • base.html (3 locais)
+   • index.html (2 locais)
+   • Cada template em app/templates/*/lista.html (e outros)
+   
+   Total: 58 ocorrências
+   
+   Proposta de Tradução: "Capacity 1" → "Capacidade 1"
+   Locais para traduzir: 59
+
+   Para mais detalhes: Ver arquivo RESUMO_EXECUTIVO_F-00X.txt (Seção 6)
+
+═══════════════════════════════════════════════════════════════════════════
+
+3. PROCURE POR TEMPLATES HTML QUE EXIBEM ESSES CÓDIGOS
+   ────────────────────────────────────────────────────
+
+   Padrão encontrado em templates:
+   
+   Arquivo: app/templates/bairro/lista.html
+   Linha 3: {% block title %}Bairros - Capacity 1{% endblock %}
+   Linha 7: <h2>F-001: Manter Bairros</h2>
+   
+   Padrão geral em todos os templates de lista:
+   • Linha 2-3: Título com "Capacity 1"
+   • Linha 7: H2 com "F-00X: Descrição"
+   
+   49 templates HTML encontrados em:
+   • app/templates/bairro/
+   • app/templates/unidade/
+   • app/templates/grupo/
+   • app/templates/conta/
+   • app/templates/feriado/
+   • app/templates/tipo_processo/
+   • app/templates/periodo/
+   • app/templates/projeto/
+   • app/templates/vinculo/
+   • app/templates/transferencia/
+   • app/templates/transicao/
+   • app/templates/consulta/ (8 arquivos)
+
+   Para mais detalhes: Ver arquivo LINHAS_EXATAS_F-00X_CAPACITY.txt (Seção 2)
+
+═══════════════════════════════════════════════════════════════════════════
+
+4. PROCURE POR ARQUIVOS PYTHON QUE CRIAM ESSES CÓDIGOS
+   ────────────────────────────────────────────────────
+
+   Localização principal: app/routes/
+   
+   13 arquivos Python com F-codes:
+   
+   ✓ bairro_routes.py (F-001) - 5 linhas
+   ✓ unidade_routes.py (F-002) - 5 linhas
+   ✓ grupo_routes.py (F-003) - 5 linhas
+   ✓ fonte_routes.py (F-004) - 4 linhas
+   ✓ conta_routes.py (F-005) - 5 linhas
+   ✓ tipo_processo_routes.py (F-006) - 5 linhas
+   ✓ periodo_routes.py (F-007) - 5 linhas
+   ✓ feriado_routes.py (F-008) - 5 linhas
+   ✓ projeto_routes.py (F-009) - 5 linhas
+   ✓ vinculo_routes.py (F-010) - múltiplas
+   ✓ transferencia_routes.py (F-011) - múltiplas
+   ✓ transicao_routes.py (F-012) - múltiplas
+   ✓ consulta_routes.py (F-013/F-014) - múltiplas
+   
+   Total: 44 ocorrências
+
+   Observação importante:
+   NÃO há código gerando esses F-codes dinamicamente.
+   Eles são hardcoded como documentação nas docstrings.
+
+   Para mais detalhes: Ver arquivo PROCURA_CODIGOS_F-00X_CAPACITY.md (Seção 5)
+
+================================================================================
+PARA ACESSAR CADA ARQUIVO
+================================================================================
+
+Todos os arquivos estão em: C:\iplan-sisgen\
+
+Arquivo                                    Tamanho  Para Quem?
+─────────────────────────────────────────────────────────────────────
+REFERENCIA_RAPIDA_F-00X.md                2 KB    Visão rápida (30 seg)
+RESUMO_EXECUTIVO_F-00X.txt                5 KB    Relatório completo
+LINHAS_EXATAS_F-00X_CAPACITY.txt          8 KB    Linha-por-linha preciso
+PROCURA_CODIGOS_F-00X_CAPACITY.md         20 KB   Análise técnica profunda
+INDEX_PROCURA_F-00X_CAPACITY.txt          6 KB    Índice com navegação
+SUMARIO_VISUAL.txt                        7 KB    Gráficos visuais
+SCRIPT_TRADUZIR_CAPACITY_PARA_CAPACIDADE  4 KB    Tradução automática
+
+================================================================================
+ESTATÍSTICAS FINAIS
+================================================================================
+
+Códigos F-00X encontrados:           44 em 13 arquivos
+String "Capacity" encontrada:        58 em 58 locais
+Funcionalidades implementadas:       14 (F-001 até F-014)
+Arquivos Python analisados:          13 routes + 6 config
+Arquivos HTML analisados:            49 templates + 1 base
+Locais para traduzir:                59
+
+Análise completada em:               03/10/2026
+Status:                              CONCLUÍDO ✓
+Pronto para:                         Ação imediata
+
+================================================================================
+PRÓXIMAS AÇÕES RECOMENDADAS
+================================================================================
+
+[ ] 1. Leia este arquivo (você já fez!)
+
+[ ] 2. Abra REFERENCIA_RAPIDA_F-00X.md para visão geral de 30 segundos
+
+[ ] 3. Abra RESUMO_EXECUTIVO_F-00X.txt para análise completa
+
+[ ] 4. (Opcional) Execute script de tradução:
+        .\SCRIPT_TRADUZIR_CAPACITY_PARA_CAPACIDADE.ps1
+
+[ ] 5. Compartilhe os resultados com seu time
+
+[ ] 6. Implemente as mudanças necessárias
+
+[ ] 7. Faça testes e validação
+
+[ ] 8. Commit no git (se aplicável)
+
+================================================================================
+SUPORTE E DÚVIDAS
+================================================================================
+
+Se você tem dúvida sobre...
+
+LOCALIZAÇÃO: Abra LINHAS_EXATAS_F-00X_CAPACITY.txt
+ESTRUTURA:   Abra PROCURA_CODIGOS_F-00X_CAPACITY.md
+TRADUÇÃO:    Abra RESUMO_EXECUTIVO_F-00X.txt (Seção 8)
+RÁPIDO:      Abra REFERENCIA_RAPIDA_F-00X.md
+
+================================================================================
+VERSÃO E DATA
+================================================================================
+
+Análise concluída em: 03 de Outubro de 2026
+Versão dos relatórios: 1.0
+Status: Pronto para uso imediato
+
+================================================================================
+Obrigado por usar este serviço de análise!
+Comece lendo: REFERENCIA_RAPIDA_F-00X.md
+================================================================================

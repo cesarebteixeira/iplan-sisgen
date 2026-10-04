@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Grupos - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>C126T: Grupos</h2>
+    <div>
+        <a href="{{ url_for('grupo.criar') }}" class="btn btn-primary">Novo Grupo</a>
+    </div>
+</div>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Tipo Órgão</th>
+            <th>Descrição</th>
+            <th>Unidade</th>
+            <th>Data de Criação</th>
+            <th>Data de Modificação</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if grupos %}
+            {% for item in grupos %}
+            <tr>
+                <td>{{ "%02d" | format(item.codigo_grupo) }}</td>
+                <td>{{ item.tipo_orgao }}</td>
+                <td>{{ item.descricao }}</td>
+                <td>{{ item.codigo_unidade }}</td>
+                <td>{{ item.data_criacao.strftime('%Y-%m-%d %H:%M:%S') if item.data_criacao else '-' }}</td>
+                <td>{{ item.data_modificacao.strftime('%Y-%m-%d %H:%M:%S') if item.data_modificacao else '-' }}</td>
+                <td>
+                    <a href="{{ url_for('grupo.editar', codigo_grupo=item.codigo_grupo, tipo_orgao=item.tipo_orgao) }}" class="btn btn-sm btn-info">Editar</a>
+                    <form method="POST" action="{{ url_for('grupo.deletar', codigo_grupo=item.codigo_grupo, tipo_orgao=item.tipo_orgao) }}" style="display:inline;">
+                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Deletar este registro?')">Deletar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr><td colspan="7">Nenhum registro encontrado</td></tr>
+        {% endif %}
+    </tbody>
+</table>
+
+{% if pagination %}
+<div class="pagination">
+    {% if pagination.has_prev %}
+        <a href="{{ url_for('grupo.listar', page=pagination.prev_num) }}" class="btn btn-secondary">Anterior</a>
+    {% endif %}
+    <span>Página {{ page }} de {{ pagination.pages }}</span>
+    {% if pagination.has_next %}
+        <a href="{{ url_for('grupo.listar', page=pagination.next_num) }}" class="btn btn-secondary">Próximo</a>
+    {% endif %}
+</div>
+{% endif %}
+{% endblock %}

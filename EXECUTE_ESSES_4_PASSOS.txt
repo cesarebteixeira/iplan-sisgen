@@ -1,0 +1,134 @@
+﻿════════════════════════════════════════════════════════════════════════════════
+                    ✅ PLANO EXECUTAVEL - VERSAO FINAL
+════════════════════════════════════════════════════════════════════════════════
+
+DIAGNOSTICO CRITICO:
+  • Python 3.13.7 está ATIVO no sistema
+  • SQLAlchemy 2.0.23 NÃO FUNCIONA com Python 3.13
+  • venv foi criado COM Python 3.13 (precisa recriar com 3.12)
+  • Solução: Desinstalar 3.13 → Instalar 3.12 → Recrear venv
+
+════════════════════════════════════════════════════════════════════════════════
+                          4 PASSOS - 30-40 MINUTOS
+════════════════════════════════════════════════════════════════════════════════
+
+PASSO 1: DESINSTALAR PYTHON 3.13 (5 min)
+──────────────────────────────────────
+  1. Settings > Apps & features
+  2. Procure: "Python 3.13"
+  3. Clique: Uninstall
+  4. IMPORTANTE: Marque "Remove Python 3.13 from PATH"
+  5. Clique: Uninstall (novamente)
+  6. Reinicie computador se solicitado
+
+PASSO 2: INSTALAR PYTHON 3.12 (10-15 min)
+──────────────────────────────────────
+  1. Vá para: https://www.python.org/downloads/release/python-3120/
+  2. Baixe: python-3.12.0-amd64.exe (64-bit)
+  3. Execute o instalador
+  4. MARQUE:
+     ☑ "Install launcher for all users"
+     ☑ "Add Python 3.12 to PATH" ← CRITICO!
+  5. Clique: Install Now
+  6. Aguarde completar
+  7. Clique: Close
+
+PASSO 3: RECREAR VENV (10-15 min)
+──────────────────────────────────
+  PowerShell:
+  
+  cd C:\iplan-sisgen\capacidade1
+  Remove-Item -Recurse -Force venv
+  python -m venv venv
+  .\venv\Scripts\Activate.ps1
+  python -m pip install --upgrade pip
+  pip install -r requirements.txt
+
+PASSO 4: TESTAR (5 min)
+──────────────────────
+  PowerShell:
+  
+  python --version    (deve mostrar 3.12.x)
+  python run.py       (inicia a aplicação)
+
+  Navegador:
+  http://localhost:5000  (deve carregar com 14 funcionalidades)
+
+════════════════════════════════════════════════════════════════════════════════
+                          CHECKLIST DE PROGRESSO
+════════════════════════════════════════════════════════════════════════════════
+
+PASSO 1: Desinstalar Python 3.13
+  [ ] Abri Settings > Apps & features
+  [ ] Procurei "Python 3.13"
+  [ ] Desinstalei com "Remove from PATH"
+  [ ] Reiniciei (se solicitado)
+
+PASSO 2: Instalar Python 3.12
+  [ ] Baixei python-3.12.0-amd64.exe
+  [ ] Executei o instalador
+  [ ] Marquei "Add Python 3.12 to PATH"
+  [ ] Instalação completou
+  [ ] Verifiquei: python --version mostra 3.12.x
+
+PASSO 3: Recrear venv
+  [ ] Naveguei para C:\iplan-sisgen\capacidade1
+  [ ] Deletei venv antigo
+  [ ] Criei novo venv
+  [ ] Ativei venv
+  [ ] Atualizei pip
+  [ ] Instalei dependências com pip install -r requirements.txt
+
+PASSO 4: Testar
+  [ ] Executei python run.py
+  [ ] Aplicação iniciou em http://localhost:5000
+  [ ] Navegador carregou página
+  [ ] Nenhum erro foi mostrado
+
+════════════════════════════════════════════════════════════════════════════════
+                        DOCUMENTACAO COMPLETA
+════════════════════════════════════════════════════════════════════════════════
+
+Documento principal:
+  📄 C:\iplan-sisgen\PLANO_EXECUCAO_PYTHON312.md
+
+Arquivos de suporte:
+  📄 C:\iplan-sisgen\capacidade1\CORRIGIR_PYTHON.md
+  📄 C:\iplan-sisgen\capacidade1\COMECE_AQUI.txt
+
+Conteúdo:
+  ✓ Instruções passo-a-passo com comandos exatos
+  ✓ Checklist de progresso
+  ✓ Solução para 6 problemas comuns
+  ✓ Tempo estimado por passo
+
+════════════════════════════════════════════════════════════════════════════════
+                        SE TIVER PROBLEMAS
+════════════════════════════════════════════════════════════════════════════════
+
+Problema: "python is not recognized"
+  → Python 3.12 não está no PATH
+  → Desinstale e reinstale, MARCANDO "Add to PATH"
+
+Problema: "Module not found"
+  → venv não foi recriado corretamente
+  → Deletar venv, recrear, reinstalar dependências
+
+Problema: "Permission denied"
+  → Feche PowerShell, abra COMO ADMINISTRADOR
+
+Mais soluções: Ver PLANO_EXECUCAO_PYTHON312.md seção "Possíveis Problemas"
+
+════════════════════════════════════════════════════════════════════════════════
+                        COMECE AGORA!
+════════════════════════════════════════════════════════════════════════════════
+
+1. Leia: C:\iplan-sisgen\PLANO_EXECUCAO_PYTHON312.md
+2. Siga os 4 passos NA SEQUENCIA
+3. Use o checklist para marcar progresso
+4. Teste: http://localhost:5000
+5. Se tudo OK: Teste os 14 módulos da aplicação
+
+Tempo estimado: 30-40 minutos
+
+════════════════════════════════════════════════════════════════════════════════

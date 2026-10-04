@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Vínculo - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>C207T: Editar Vínculo Órgão-Projeto</h2>
+</div>
+
+<div class="form-container">
+    <div class="alert alert-danger" style="margin-bottom: 1.5rem;">
+        <strong>Atenção:</strong> Este registro não pode ser alterado. Para modificar um vínculo, delete-o e crie um novo.
+    </div>
+    
+    <h3>Informações do Vínculo</h3>
+    <div class="form">
+        <div class="form-group">
+            <label>Código Órgão</label>
+            <input type="text" value="{{ vinculo.codigo_orgao }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Código Projeto</label>
+            <input type="text" value="{{ "%02d" | format(vinculo.codigo_projeto) }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Secretaria</label>
+            <input type="text" value="{{ vinculo.secretaria }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Coordenadoria</label>
+            <input type="text" value="{{ vinculo.coordenadoria if vinculo.coordenadoria else '-' }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Data de Criação</label>
+            <input type="text" value="{{ vinculo.data_criacao.strftime('%Y-%m-%d %H:%M:%S') if vinculo.data_criacao else '-' }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Data de Modificação</label>
+            <input type="text" value="{{ vinculo.data_modificacao.strftime('%Y-%m-%d %H:%M:%S') if vinculo.data_modificacao else '-' }}" readonly disabled>
+        </div>
+        
+        <div style="margin-top: 1.5rem;">
+            <a href="{{ url_for('vinculo.listar') }}" class="btn btn-secondary">Voltar</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

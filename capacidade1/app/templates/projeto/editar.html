@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Projeto - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>C205T: Editar Projeto</h2>
+</div>
+
+<div class="form-container">
+    <h3>Editar Projeto</h3>
+    <form method="POST" class="form">
+        <div class="form-group">
+            <label>Código Projeto</label>
+            <input type="text" value="{{ "%02d" | format(projeto.codigo_projeto) }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Secretaria</label>
+            <input type="text" value="{{ projeto.secretaria }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label for="descricao">Descrição <span style="color:red;">*</span></label>
+            <input type="text" id="descricao" name="descricao" maxlength="40" required value="{{ projeto.descricao }}">
+        </div>
+        
+        <div class="form-group">
+            <label>Data de Criação</label>
+            <input type="text" value="{{ projeto.data_criacao.strftime('%Y-%m-%d %H:%M:%S') if projeto.data_criacao else '-' }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Data de Modificação</label>
+            <input type="text" value="{{ projeto.data_modificacao.strftime('%Y-%m-%d %H:%M:%S') if projeto.data_modificacao else '-' }}" readonly disabled>
+        </div>
+        
+        <div style="margin-top: 1.5rem;">
+            <button type="submit" class="btn btn-success">Salvar Alterações</button>
+            <a href="{{ url_for('projeto.listar') }}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

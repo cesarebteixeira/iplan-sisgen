@@ -1,0 +1,102 @@
+﻿╔════════════════════════════════════════════════════════════════════╗
+║            CORRECAO DO ERRO DE PYTHON - GUIA RAPIDO              ║
+╚════════════════════════════════════════════════════════════════════╝
+
+PROBLEMA ORIGINAL:
+  Você estava usando Python 3.13
+  SQLAlchemy 2.0.23 não é compatível com Python 3.13
+  Erro: AssertionError in SQLAlchemy
+
+SOLUCAO:
+  Usar Python 3.12 (estável e totalmente compatível)
+
+╔════════════════════════════════════════════════════════════════════╗
+║                    TIMELINE DE EXECUCAO                           ║
+╚════════════════════════════════════════════════════════════════════╝
+
+TEMPO ESTIMADO: 15-20 minutos
+
+  [0-5 min]    Desinstalar Python 3.13
+  [5-10 min]   Baixar e instalar Python 3.12
+  [10-15 min]  Configurar projeto (executar scripts)
+  [15-20 min]  Testar aplicação
+
+╔════════════════════════════════════════════════════════════════════╗
+║                   ARQUIVOS DE AJUDA CRIADOS                       ║
+╚════════════════════════════════════════════════════════════════════╝
+
+DOCUMENTACAO:
+  📄 CORRIGIR_PYTHON.md
+     - Guia completo e detalhado
+     - Inclui troubleshooting
+     - Leia PRIMEIRO se tem duvidas
+
+REFERENCIAS RAPIDAS:
+  📄 FIX_PYTHON_RAPIDO.txt
+     - Resumo dos 3 passos
+     - Checklist de verificação
+
+SCRIPTS AUTOMATIZADOS:
+  🔧 INSTALAR_PYTHON312.ps1
+     - Para desinstalar Python 3.13 automaticamente
+
+  🔧 APOS_PYTHON312.ps1
+     - Para configurar projeto APOS instalar Python 3.12
+     - Instala todas as dependências automaticamente
+
+╔════════════════════════════════════════════════════════════════════╗
+║                      COMECE POR AQUI                              ║
+╚════════════════════════════════════════════════════════════════════╝
+
+OPCAO 1: LEITURA COMPLETA (Recomendado)
+  1. Abra: C:\iplan-sisgen\capacidade1\CORRIGIR_PYTHON.md
+  2. Siga todos os passos cuidadosamente
+  3. Execute os scripts quando indicado
+
+OPCAO 2: RAPIDO E DIRETO
+  1. Leia: FIX_PYTHON_RAPIDO.txt (5 min)
+  2. Siga os 3 passos (10 min)
+  3. Execute: .\APOS_PYTHON312.ps1 (5 min)
+
+╔════════════════════════════════════════════════════════════════════╗
+║                   CHECKLIST DE PROGRESSO                          ║
+╚════════════════════════════════════════════════════════════════════╝
+
+[ ] Desinstalado Python 3.13
+[ ] Instalado Python 3.12
+[ ] Python 3.12 adicionado ao PATH
+[ ] Executado .\APOS_PYTHON312.ps1
+[ ] Verificado: python --version (mostra 3.12.x)
+[ ] Instaladas dependências
+[ ] Testado: python run.py (sem erros)
+[ ] Acessado: http://localhost:5000 (abriu a aplicação)
+
+╔════════════════════════════════════════════════════════════════════╗
+║                     SUCESSO!                                      ║
+╚════════════════════════════════════════════════════════════════════╝
+
+Quando tudo estiver funcionando:
+
+  1. Teste os 14 módulos da aplicação
+  2. Valide conforme as evidências originais
+  3. Se OK, confirme: "CAPACIDADE APROVADA"
+
+╔════════════════════════════════════════════════════════════════════╗
+║             PERGUNTAS FREQUENTES                                  ║
+╚════════════════════════════════════════════════════════════════════╝
+
+P: Preciso desinstalar Python 3.13?
+R: SIM! SQLAlchemy 2.0.23 não funciona com Python 3.13
+
+P: Posso usar Python 3.11 em vez de 3.12?
+R: SIM! Python 3.11 também funciona. Mas 3.12 é recomendado.
+
+P: Quanto tempo demora?
+R: 15-20 minutos (incluindo download do instalador Python)
+
+P: Preciso de admin?
+R: Para desinstalar/instalar Python, SIM (mas é rápido)
+
+P: E se der erro durante a instalação?
+R: Veja a seção de troubleshooting em CORRIGIR_PYTHON.md
+

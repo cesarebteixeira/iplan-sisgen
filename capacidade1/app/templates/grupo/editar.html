@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Grupo - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>C126T: Editar Grupo</h2>
+</div>
+
+<div class="form-container">
+    <h3>Editar Grupo</h3>
+    <form method="POST" class="form">
+        <div class="form-group">
+            <label>Código Grupo</label>
+            <input type="text" value="{{ "%02d" | format(grupo.codigo_grupo) }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Tipo Órgão</label>
+            <input type="text" value="{{ grupo.tipo_orgao }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label for="descricao">Descrição <span style="color:red;">*</span></label>
+            <input type="text" id="descricao" name="descricao" maxlength="40" required value="{{ grupo.descricao }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="codigo_unidade">Unidade Orçamentária <span style="color:red;">*</span></label>
+            <select id="codigo_unidade" name="codigo_unidade" required>
+                <option value="">Selecione uma unidade</option>
+                {% for unidade in unidades %}
+                <option value="{{ unidade.codigo_unidade }}" {% if unidade.codigo_unidade == grupo.codigo_unidade %}selected{% endif %}>
+                    {{ unidade.codigo_unidade }} - {{ unidade.descricao }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>Data de Criação</label>
+            <input type="text" value="{{ grupo.data_criacao.strftime('%Y-%m-%d %H:%M:%S') if grupo.data_criacao else '-' }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Data de Modificação</label>
+            <input type="text" value="{{ grupo.data_modificacao.strftime('%Y-%m-%d %H:%M:%S') if grupo.data_modificacao else '-' }}" readonly disabled>
+        </div>
+        
+        <div style="margin-top: 1.5rem;">
+            <button type="submit" class="btn btn-success">Salvar Alterações</button>
+            <a href="{{ url_for('grupo.listar') }}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

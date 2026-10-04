@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Unidades Orçamentárias - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>C025T: Unidades Orçamentárias</h2>
+    <div>
+        <a href="{{ url_for('unidade.criar') }}" class="btn btn-primary">Nova Unidade</a>
+    </div>
+</div>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Descrição</th>
+            <th>Data de Criação</th>
+            <th>Data de Modificação</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if unidades %}
+            {% for item in unidades %}
+            <tr>
+                <td>{{ item.codigo_unidade }}</td>
+                <td>{{ item.descricao }}</td>
+                <td>{{ item.data_criacao.strftime('%Y-%m-%d %H:%M:%S') if item.data_criacao else '-' }}</td>
+                <td>{{ item.data_modificacao.strftime('%Y-%m-%d %H:%M:%S') if item.data_modificacao else '-' }}</td>
+                <td>
+                    <a href="{{ url_for('unidade.editar', codigo_unidade=item.codigo_unidade) }}" class="btn btn-sm btn-info">Editar</a>
+                    <form method="POST" action="{{ url_for('unidade.deletar', codigo_unidade=item.codigo_unidade) }}" style="display:inline;">
+                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Deletar este registro?')">Deletar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr><td colspan="5">Nenhum registro encontrado</td></tr>
+        {% endif %}
+    </tbody>
+</table>
+
+{% if pagination %}
+<div class="pagination">
+    {% if pagination.has_prev %}
+        <a href="{{ url_for('unidade.listar', page=pagination.prev_num) }}" class="btn btn-secondary">Anterior</a>
+    {% endif %}
+    <span>Página {{ page }} de {{ pagination.pages }}</span>
+    {% if pagination.has_next %}
+        <a href="{{ url_for('unidade.listar', page=pagination.next_num) }}" class="btn btn-secondary">Próximo</a>
+    {% endif %}
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Fontes de Recursos - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>C144T: Fontes de Recursos</h2>
+</div>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Código Fonte</th>
+            <th>Código Órgão</th>
+            <th>Descrição</th>
+            <th>FNDE</th>
+            <th>Data de Criação</th>
+            <th>Data de Modificação</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if fontes %}
+            {% for item in fontes %}
+            <tr>
+                <td>{{ item.codigo_fonte }}</td>
+                <td>{{ item.codigo_orgao }}</td>
+                <td>{{ item.descricao }}</td>
+                <td>{{ item.ind_fnde if item.ind_fnde else '-' }}</td>
+                <td>{{ item.data_criacao.strftime('%Y-%m-%d %H:%M:%S') if item.data_criacao else '-' }}</td>
+                <td>{{ item.data_modificacao.strftime('%Y-%m-%d %H:%M:%S') if item.data_modificacao else '-' }}</td>
+                <td>
+                    <a href="{{ url_for('fonte.detalhes', codigo_fonte=item.codigo_fonte, codigo_orgao=item.codigo_orgao) }}" class="btn btn-sm btn-info">Ver Detalhes</a>
+                </td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr><td colspan="7">Nenhum registro encontrado</td></tr>
+        {% endif %}
+    </tbody>
+</table>
+
+{% if pagination %}
+<div class="pagination">
+    {% if pagination.has_prev %}
+        <a href="{{ url_for('fonte.listar', page=pagination.prev_num) }}" class="btn btn-secondary">Anterior</a>
+    {% endif %}
+    <span>Página {{ page }} de {{ pagination.pages }}</span>
+    {% if pagination.has_next %}
+        <a href="{{ url_for('fonte.listar', page=pagination.next_num) }}" class="btn btn-secondary">Próximo</a>
+    {% endif %}
+</div>
+{% endif %}
+{% endblock %}

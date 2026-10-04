@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Bairro - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>C023T: Editar Bairro</h2>
+</div>
+
+<div class="form-container">
+    <div class="alert alert-danger" style="margin-bottom: 1.5rem;">
+        <strong>Atenção:</strong> Este registro não pode ser alterado. Apenas a exclusão é permitida.
+    </div>
+    
+    <h3>Informações do Bairro</h3>
+    <div class="form">
+        <div class="form-group">
+            <label>Código Bairro</label>
+             <input type="text" value="{{ "%03d" | format(bairro.codigo_bairro | int) }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Descrição</label>
+            <input type="text" value="{{ bairro.descricao }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Data de Criação</label>
+            <input type="text" value="{{ bairro.data_criacao.strftime('%Y-%m-%d %H:%M:%S') if bairro.data_criacao else '-' }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Data de Modificação</label>
+            <input type="text" value="{{ bairro.data_modificacao.strftime('%Y-%m-%d %H:%M:%S') if bairro.data_modificacao else '-' }}" readonly disabled>
+        </div>
+        
+        <div style="margin-top: 1.5rem;">
+            <a href="{{ url_for('bairro.listar') }}" class="btn btn-secondary">Voltar</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

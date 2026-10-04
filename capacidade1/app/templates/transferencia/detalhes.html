@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Detalhes da Transferência - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>Detalhes da Transferência</h2>
+    <div>
+        <a href="{{ url_for('transferencia.listar') }}" class="btn btn-secondary">Voltar à Listagem</a>
+    </div>
+</div>
+
+<div class="form-container">
+    <h3>Informações da Transferência</h3>
+    
+    <div class="form">
+        <div class="form-group">
+            <label>ID</label>
+            <input type="text" value="{{ transferencia.id if transferencia.id else '-' }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Descrição</label>
+            <textarea readonly disabled style="resize: none;">{{ transferencia.descricao if transferencia.descricao else '-' }}</textarea>
+        </div>
+        
+        <div class="form-group">
+            <label>Data de Criação</label>
+            <input type="text" value="{{ transferencia.data_criacao.strftime('%Y-%m-%d %H:%M:%S') if transferencia.data_criacao else '-' }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Data de Modificação</label>
+            <input type="text" value="{{ transferencia.data_modificacao.strftime('%Y-%m-%d %H:%M:%S') if transferencia.data_modificacao else '-' }}" readonly disabled>
+        </div>
+    </div>
+</div>
+{% endblock %}

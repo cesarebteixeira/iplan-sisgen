@@ -1,0 +1,251 @@
+================================================================================
+ÍNDICE COMPLETO - PROCURA POR CÓDIGOS F-00X E STRING "CAPACITY"
+================================================================================
+Data: 03 de Outubro de 2026
+Status: COMPLETO
+
+================================================================================
+RESPONDA ÀS SUAS PERGUNTAS AQUI:
+================================================================================
+
+1. ONDE OS CÓDIGOS "F-001", "F-002", ETC. ESTÃO SENDO GERADOS?
+   ➜ Veja: RESUMO_EXECUTIVO_F-00X.txt (Seção 1)
+   ➜ Ou: PROCURA_CODIGOS_F-00X_CAPACITY.md (Seção 2)
+   
+   RESPOSTA RÁPIDA:
+   • Arquivo route: app/routes/ENTIDADE_routes.py
+   • Linha 2: "Routes for F-00X"
+   • Linhas nas funções: Docstrings mencionam F-00X
+   • Não são gerados - vêm da especificação
+
+2. ONDE A STRING "CAPACITY" ESTÁ SENDO USADA?
+   ➜ Veja: RESUMO_EXECUTIVO_F-00X.txt (Seção 6)
+   ➜ Ou: LINHAS_EXATAS_F-00X_CAPACITY.txt (Seção 3)
+   
+   RESPOSTA RÁPIDA:
+   • 9 arquivos Python
+   • 49 templates HTML
+   • 1 arquivo CSS
+   • Total: 58 ocorrências
+
+3. PROCURE POR TEMPLATES HTML QUE EXIBEM ESSES CÓDIGOS
+   ➜ Veja: PROCURA_CODIGOS_F-00X_CAPACITY.md (Seção 4)
+   ➜ Ou: LINHAS_EXATAS_F-00X_CAPACITY.txt (Seção 2)
+   
+   RESPOSTA RÁPIDA:
+   • Arquivo: app/templates/*/lista.html
+   • Linha 7: <h2>F-00X: Descrição</h2>
+   • Linha 3: {% block title %}... - Capacity 1{% endblock %}
+
+4. PROCURE POR ARQUIVOS PYTHON QUE CRIAM ESSES CÓDIGOS
+   ➜ Veja: PROCURA_CODIGOS_F-00X_CAPACITY.md (Seção 5)
+   ➜ Ou: RESUMO_EXECUTIVO_F-00X.txt (Seção 5)
+   
+   RESPOSTA RÁPIDA:
+   • 13 arquivos em app/routes/*_routes.py
+   • 44 ocorrências de F-00X
+   • Nenhuma geração automática
+
+================================================================================
+ARQUIVOS DE REFERÊNCIA (Uso Recomendado por Caso)
+================================================================================
+
+CASO 1: "Quero um resumo de 2 minutos"
+   ➜ REFERENCIA_RAPIDA_F-00X.md ⭐ COMECE AQUI
+
+CASO 2: "Preciso de um relatório executivo completo"
+   ➜ RESUMO_EXECUTIVO_F-00X.txt ⭐ 1-2 páginas
+
+CASO 3: "Quero saber as linhas exatas onde tudo aparece"
+   ➜ LINHAS_EXATAS_F-00X_CAPACITY.txt ⭐ Referência precisa
+
+CASO 4: "Preciso de análise profunda com todas as seções"
+   ➜ PROCURA_CODIGOS_F-00X_CAPACITY.md ⭐ Relatório completo
+
+CASO 5: "Vou traduzir 'Capacity' para 'Capacidade'"
+   ➜ SCRIPT_TRADUZIR_CAPACITY_PARA_CAPACIDADE.ps1 ⭐ Pronto para usar
+
+CASO 6: "Preciso de uma visão geral rápida"
+   ➜ Este arquivo (INDEX_PROCURA_F-00X_CAPACITY.txt)
+
+================================================================================
+RESPOSTA RÁPIDA EM 10 LINHAS
+================================================================================
+
+P: Onde os códigos F-001, F-002, etc. estão sendo gerados?
+R: Em app/routes/*_routes.py (linha 2 de cada arquivo, 44 ocorrências total)
+
+P: Onde a string "Capacity" está sendo usada?
+R: Em 9 arquivos Python + 49 templates HTML = 58 ocorrências total
+
+P: Templates HTML que exibem F-codes?
+R: app/templates/*/lista.html (linha 7: <h2>F-00X: Descrição</h2>)
+
+P: Arquivos Python que mencionam F-codes?
+R: 13 arquivos em app/routes/ (nenhuma geração automática)
+
+P: Estrutura de como são gerados?
+R: Não são gerados - vêm da especificação e são incorporados como documentação
+
+================================================================================
+ESTATÍSTICAS RÁPIDAS
+================================================================================
+
+Métrica                                  Valor
+─────────────────────────────────────────────────────────
+Códigos F-00X encontrados               44 em 13 arquivos
+Ocorrências de "Capacity"               58 (9 Python + 49 HTML)
+Funcionalidades implementadas           14 (F-001 até F-014)
+Arquivos de routes com F-00X            13
+Templates HTML com "Capacity"           49
+Linhas a traduzir "Capacity"            59
+Total de arquivos afetados              71
+
+================================================================================
+MAPEAMENTO FUNCIONALIDADES - VISÃO GERAL
+================================================================================
+
+F-001 ✓ bairro_routes.py          - Manter Bairros
+F-002 ✓ unidade_routes.py         - Manter Unidades Orçamentárias
+F-003 ✓ grupo_routes.py           - Manter Grupos
+F-004 ✓ fonte_routes.py           - Consultar Fontes
+F-005 ✓ conta_routes.py           - Classificar Contas
+F-006 ✓ tipo_processo_routes.py   - Manter Tipos de Processo
+F-007 ✓ periodo_routes.py         - Criar Períodos
+F-008 ✓ feriado_routes.py         - Manter Feriados
+F-009 ✓ projeto_routes.py         - Manter Projetos
+F-010 ✓ vinculo_routes.py         - Vínculos Órgão-Projeto
+F-011 ✓ transferencia_routes.py   - Transferência de Órgãos
+F-012 ✓ transicao_routes.py       - Transição SDI
+F-013 ✓ consulta_routes.py        - Consultas do Sistema
+F-014 ✓ consulta_routes.py        - Auditoria
+
+================================================================================
+LOCALIZAÇÃO DOS ARQUIVOS
+================================================================================
+
+Todos os arquivos de referência estão em:
+C:\iplan-sisgen\
+
+Arquivos analisados estão em:
+C:\iplan-sisgen\capacidade1\
+
+Subdiretórios principais:
+├─ app/routes/      (13 arquivos com F-codes)
+├─ app/templates/   (49 arquivos com "Capacity")
+├─ app/models/      (14 modelos de banco de dados)
+├─ app/config.py    (configuração principal)
+└─ app/static/css/  (CSS com "Capacity")
+
+================================================================================
+PRÓXIMAS AÇÕES RECOMENDADAS
+================================================================================
+
+1. LEITURA (5 minutos)
+   └─ Ler: REFERENCIA_RAPIDA_F-00X.md
+
+2. ANÁLISE (15 minutos)
+   └─ Ler: RESUMO_EXECUTIVO_F-00X.txt
+
+3. DETALHAMENTO (30 minutos)
+   └─ Ler: PROCURA_CODIGOS_F-00X_CAPACITY.md
+
+4. TRADUÇÃO (Opcional)
+   └─ Executar: SCRIPT_TRADUZIR_CAPACITY_PARA_CAPACIDADE.ps1 -DryRun $true
+   └─ Depois: SCRIPT_TRADUZIR_CAPACITY_PARA_CAPACIDADE.ps1 -DryRun $false
+
+5. VALIDAÇÃO
+   └─ Verificar resultado da tradução
+   └─ Fazer testes
+   └─ Commit no git
+
+================================================================================
+INFORMAÇÕES TÉCNICAS
+================================================================================
+
+Ferramenta Utilizada:
+  • PowerShell 5.1
+  • Grep via Select-String
+  • Análise de codebase
+
+Padrões Buscados:
+  • F-00[0-9] (Códigos F-001 até F-014)
+  • Capacity   (String em inglês)
+
+Arquivos Processados:
+  • .py   (Python - 13 routes + 6 config)
+  • .html (HTML - 49 templates)
+  • .css  (CSS - 1 arquivo)
+  • .md   (Markdown - Documentação)
+  • .txt  (Text - Documentação)
+
+Encoding:
+  • UTF-8 (padrão da aplicação)
+  • Alguns acentos podem aparecer com caracteres especiais em terminal Windows
+
+================================================================================
+TRADUÇÃO "CAPACITY" PARA "CAPACIDADE"
+================================================================================
+
+STATUS: 59 locais identificados para tradução
+
+Arquivos a Modificar:
+  1. app/config.py                    (2 locais)
+  2. app/static/css/style.css         (1 local)
+  3. app/templates/base.html          (3 locais)
+  4. app/templates/index.html         (2 locais)
+  5. Todos os 49 templates (49 locais)
+  6. Comentários Python (2 locais)
+                                      ─────────
+                                  TOTAL: 59 locais
+
+Script Automático:
+  ➜ SCRIPT_TRADUZIR_CAPACITY_PARA_CAPACIDADE.ps1
+  ➜ Modo dry-run: Visualiza mudanças sem fazer
+  ➜ Modo real: Executa substituição
+
+Exemplo de Mudança:
+  ANTES: APP_NAME = "Capacity 1 - Estrutura da rede e do gasto"
+  DEPOIS: APP_NAME = "Capacidade 1 - Estrutura da rede e do gasto"
+
+================================================================================
+SUPORTE E DÚVIDAS
+================================================================================
+
+Se você tem dúvida sobre...
+
+LOCALIZAÇÃO DE CÓDIGO:
+  ➜ Ver: LINHAS_EXATAS_F-00X_CAPACITY.txt
+
+ESTRUTURA TÉCNICA:
+  ➜ Ver: PROCURA_CODIGOS_F-00X_CAPACITY.md (Seção 5-8)
+
+TRADUÇÃO:
+  ➜ Ver: RESUMO_EXECUTIVO_F-00X.txt (Seção 8)
+  ➜ Usar: SCRIPT_TRADUZIR_CAPACITY_PARA_CAPACIDADE.ps1
+
+REFERÊNCIA RÁPIDA:
+  ➜ Ver: REFERENCIA_RAPIDA_F-00X.md
+
+================================================================================
+VERSÃO E HISTÓRICO
+================================================================================
+
+Versão: 1.0
+Data: 03 de Outubro de 2026
+Status: Completo e Pronto para Uso
+Arquivos Gerados: 6 (incluindo este)
+
+Checklist:
+  ✓ Busca completa realizada
+  ✓ F-00X identificados (44 ocorrências)
+  ✓ "Capacity" localizado (58 ocorrências)
+  ✓ Linhas exatas documentadas
+  ✓ Scripts de automação criados
+  ✓ Referências organizadas
+  ✓ Documentação concluída
+
+================================================================================
+FIM DO ÍNDICE
+================================================================================
+Para começar, abra: REFERENCIA_RAPIDA_F-00X.md

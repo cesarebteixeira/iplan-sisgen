@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Registros Históricos - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>Registros Históricos</h2>
+     <a href="{{ url_for('consulta.index') }}" class="btn btn-secondary">Voltar aos Relatórios</a>
+</div>
+
+<table class="data-table">
+    <thead>
+        <tr>
+             <th>Data/Hora</th>
+             <th>Tabela</th>
+             <th>Evento</th>
+             <th>ID do Registro</th>
+             <th>Detalhes</th>
+         </tr>
+    </thead>
+    <tbody>
+        {% if historicos %}
+            {% for historico in historicos %}
+            <tr>
+                <td>{{ historico.data_hora }}</td>
+                <td>{{ historico.tabela }}</td>
+                <td>{{ historico.evento }}</td>
+                <td>{{ historico.chave_primaria }}</td>
+                <td>{{ historico.descricao }}</td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr><td colspan="5">Nenhum registro encontrado</td></tr>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}

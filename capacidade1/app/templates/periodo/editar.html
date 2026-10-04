@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Período - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>C172T: Editar Período de Referência</h2>
+</div>
+
+<div class="form-container">
+    <div class="alert alert-danger" style="margin-bottom: 1.5rem;">
+        <strong>Atenção:</strong> Os períodos de referência não podem ser alterados. Para modificar um período, delete-o e crie um novo.
+    </div>
+    
+    <h3>Informações do Período</h3>
+    <div class="form">
+        <div class="form-group">
+            <label>Ano</label>
+            <input type="text" value="{{ periodo.ano }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Mês</label>
+            <input type="text" value="{{ "%02d" | format(periodo.mes) }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Dia Início</label>
+            <input type="text" value="{{ "%02d" | format(periodo.dia_inicio) if periodo.dia_inicio else '-' }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Mês Início</label>
+            <input type="text" value="{{ "%02d" | format(periodo.mes_inicio) if periodo.mes_inicio else '-' }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Dia Limite</label>
+            <input type="text" value="{{ "%02d" | format(periodo.dia_limite) if periodo.dia_limite else '-' }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Mês Limite</label>
+            <input type="text" value="{{ "%02d" | format(periodo.mes_limite) if periodo.mes_limite else '-' }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Data de Criação</label>
+            <input type="text" value="{{ periodo.data_criacao.strftime('%Y-%m-%d %H:%M:%S') if periodo.data_criacao else '-' }}" readonly disabled>
+        </div>
+        
+        <div style="margin-top: 1.5rem;">
+            <a href="{{ url_for('periodo.listar') }}" class="btn btn-secondary">Voltar</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
