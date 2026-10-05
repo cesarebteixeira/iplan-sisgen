@@ -5,6 +5,9 @@
 {% block content %}
 <div class="page-header">
     <h2>C144T: Fontes de Recursos</h2>
+    <div>
+        <a href="{{ url_for('fonte.criar') }}" class="btn btn-primary">Nova Fonte</a>
+    </div>
 </div>
 
 <table class="data-table">
@@ -30,7 +33,10 @@
                 <td>{{ item.data_criacao.strftime('%Y-%m-%d %H:%M:%S') if item.data_criacao else '-' }}</td>
                 <td>{{ item.data_modificacao.strftime('%Y-%m-%d %H:%M:%S') if item.data_modificacao else '-' }}</td>
                 <td>
-                    <a href="{{ url_for('fonte.detalhes', codigo_fonte=item.codigo_fonte, codigo_orgao=item.codigo_orgao) }}" class="btn btn-sm btn-info">Ver Detalhes</a>
+                    <a href="{{ url_for('fonte.editar', codigo_fonte=item.codigo_fonte, codigo_orgao=item.codigo_orgao) }}" class="btn btn-sm btn-warning">Editar</a>
+                    <form method="POST" action="{{ url_for('fonte.deletar', codigo_fonte=item.codigo_fonte, codigo_orgao=item.codigo_orgao) }}" style="display:inline;">
+                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Deletar este registro?')">Deletar</button>
+                    </form>
                 </td>
             </tr>
             {% endfor %}

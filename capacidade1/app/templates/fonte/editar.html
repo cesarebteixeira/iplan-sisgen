@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Fonte - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>C144T: Editar Fonte de Recursos</h2>
+</div>
+
+<div class="form-container">
+    <h3>Editar Fonte</h3>
+    <form method="POST" class="form">
+        <div class="form-group">
+            <label>Código Fonte</label>
+            <input type="text" value="{{ fonte.codigo_fonte }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Código Órgão</label>
+            <input type="text" value="{{ fonte.codigo_orgao }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label for="descricao">Descrição <span style="color:red;">*</span></label>
+            <input type="text" id="descricao" name="descricao" value="{{ fonte.descricao }}" maxlength="30" required placeholder="Máximo 30 caracteres">
+        </div>
+        
+        <div class="form-group">
+            <label for="ind_fnde">Indicador FNDE</label>
+            <select id="ind_fnde" name="ind_fnde">
+                <option value="">-- Vazio --</option>
+                <option value="S" {% if fonte.ind_fnde == 'S' %}selected{% endif %}>S (Sim)</option>
+                <option value="N" {% if fonte.ind_fnde == 'N' %}selected{% endif %}>N (Não)</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>Data de Criação</label>
+            <input type="text" value="{{ fonte.data_criacao.strftime('%Y-%m-%d %H:%M:%S') if fonte.data_criacao else '-' }}" readonly disabled>
+        </div>
+        
+        <div class="form-group">
+            <label>Data de Modificação</label>
+            <input type="text" value="{{ fonte.data_modificacao.strftime('%Y-%m-%d %H:%M:%S') if fonte.data_modificacao else '-' }}" readonly disabled>
+        </div>
+        
+        <div style="margin-top: 1.5rem;">
+            <button type="submit" class="btn btn-success">Atualizar</button>
+            <a href="{{ url_for('fonte.listar') }}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

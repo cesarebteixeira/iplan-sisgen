@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Nova Fonte - Capacidade 1{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>C144T: Nova Fonte de Recursos</h2>
+</div>
+
+<div class="form-container">
+    <h3>Criar Nova Fonte</h3>
+    <form method="POST" class="form">
+        <div class="form-group">
+            <label for="codigo_fonte">Código Fonte <span style="color:red;">*</span></label>
+            <input type="text" id="codigo_fonte" name="codigo_fonte" maxlength="7" required placeholder="7 dígitos">
+        </div>
+        
+        <div class="form-group">
+            <label for="codigo_orgao">Código Órgão <span style="color:red;">*</span></label>
+            <input type="text" id="codigo_orgao" name="codigo_orgao" required placeholder="Código do órgão">
+        </div>
+        
+        <div class="form-group">
+            <label for="descricao">Descrição <span style="color:red;">*</span></label>
+            <input type="text" id="descricao" name="descricao" maxlength="30" required placeholder="Máximo 30 caracteres">
+        </div>
+        
+        <div class="form-group">
+            <label for="ind_fnde">Indicador FNDE</label>
+            <select id="ind_fnde" name="ind_fnde">
+                <option value="">-- Vazio --</option>
+                <option value="S">S (Sim)</option>
+                <option value="N">N (Não)</option>
+            </select>
+        </div>
+        
+        <div style="margin-top: 1.5rem;">
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <a href="{{ url_for('fonte.listar') }}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

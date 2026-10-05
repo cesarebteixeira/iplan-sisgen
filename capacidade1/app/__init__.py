@@ -67,4 +67,12 @@ def create_app(config_class=Config):
         from flask import render_template
         return render_template('index.html')
     
+    # Initialize database tables on first run
+    with app.app_context():
+        try:
+            db.create_all()
+        except Exception:
+            # If there's an error (e.g., tables already exist), continue anyway
+            pass
+    
     return app
